@@ -1,0 +1,321 @@
+/* Styles for subscribe.html */
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+
+html {
+    padding-top: 5px;
+}
+
+/* Body styles */
+body {
+    margin: 0;
+    padding-top: 5px;
+    background: linear-gradient(#240d20, #cd2e2e) fixed;
+    font-family: "Arial";
+    overflow-x: hidden;
+}
+
+.form {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+h2{
+    color: white;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+.form .message a {
+    color: rgb(255, 49, 49);
+    text-decoration: none;
+}
+
+.form .register-form {
+    display: inline-block;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(255, 49, 49);
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    background: rgb(255, 49, 49);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(255, 49, 49),
+    0 0 25px rgb(255, 49, 49),
+    0 0 50px rgb(255, 49, 49),
+    0 0 100px rgb(255, 49, 49);
+}
+
+.btn span {
+    position: absolute;
+    display: block;
+}
+
+.btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(255, 49, 49));
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgb(255, 49, 49));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+    top: -100%;
+    }
+    50%,100% {
+    top: 100%;
+    }
+}
+
+.btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, rgb(255, 49, 49));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+    right: -100%;
+    }
+    50%,100% {
+    right: 100%;
+    }
+}
+
+.btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, rgb(255, 49, 49));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+    bottom: -100%;
+    }
+    50%,100% {
+    bottom: 100%;
+    }
+}
+
+/* navbar css */
+nav {
+    height: 4.5rem;
+    width: 100vw;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    top: 0; /* Stick to the top of the page */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    position: relative;
+    color: #f2f5f7;
+}
+
+.nav-links li a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #FF0000; /* Neon red underline color */
+}
+
+/* Styling Subscribe Button */
+.subscribe-button {
+    padding: 0.3em 0.8em;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+nav{
+    position: fixed;
+    z-index: 3;
+}
+
+.hamburger{
+    display:block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+}
+
+.nav-links{
+    position: fixed;
+    background: #131418;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+}
+
+.nav-links.open{
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+}
+
+.nav-links li{
+    opacity: 0;
+}
+.nav-links li:nth-child(1){
+transition: all 0.5s ease 0.2s;
+}
+.nav-links li:nth-child(2){
+    transition: all 0.5s ease 0.4s;
+}
+.nav-links li:nth-child(3){
+    transition: all 0.5s ease 0.6s;
+}
+.nav-links li:nth-child(4){
+    transition: all 0.5s ease 0.7s;
+}
+.nav-links li:nth-child(5){
+    transition: all 0.5s ease 0.8s;
+}
+.nav-links li:nth-child(6){
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+}
+.nav-links li:nth-child(7){
+    transition: all 0.5s ease 1s;
+    margin: 0;
+}
+li.fade{
+    opacity: 1;
+}
+
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+} 

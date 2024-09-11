@@ -1,0 +1,707 @@
+/* styles.css */
+/* Body styles */
+body {
+    margin: 0;
+    padding-top: 5px;
+    background: linear-gradient(#240d20, #cd2e2e) fixed;
+    font-family: 'Titillium Web';
+    overflow-x: hidden;
+}
+
+/* Main content styles */
+.main-content {
+    width: 80%;
+    margin: auto;
+    padding-top: 70px;
+    color: lightgray;
+    text-align: center;
+}
+
+nav {
+    height: 4.5rem;
+    width: 100vw;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    top: 0; /* Stick to the top of the page */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    position: relative;
+    color: #f2f5f7;
+}
+
+.nav-links li a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #FF0000; /* Neon red underline color */
+}
+
+/* Styling Subscribe Button */
+.subscribe-button {
+    padding: 0.3em 0.8em;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+nav{
+    position: fixed;
+    z-index: 3;
+}
+
+.hamburger{
+    display:block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+}
+
+.nav-links{
+    position: fixed;
+    background: #131418;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+}
+
+.nav-links.open{
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+}
+
+.nav-links li{
+    opacity: 0;
+}
+.nav-links li:nth-child(1){
+transition: all 0.5s ease 0.2s;
+}
+.nav-links li:nth-child(2){
+    transition: all 0.5s ease 0.4s;
+}
+.nav-links li:nth-child(3){
+    transition: all 0.5s ease 0.6s;
+}
+.nav-links li:nth-child(4){
+    transition: all 0.5s ease 0.7s;
+}
+.nav-links li:nth-child(5){
+    transition: all 0.5s ease 0.8s;
+}
+.nav-links li:nth-child(6){
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+}
+.nav-links li:nth-child(7){
+    transition: all 0.5s ease 1s;
+    margin: 0;
+}
+li.fade{
+    opacity: 1;
+}
+
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+} 
+
+/* Styles for the image */
+.image-container img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
+    transition: transform 0.3s ease;
+    position: relative;
+    max-width: 1200px; /* Adjust maximum width as needed */
+    margin: 0 auto; /* Center the image container */
+}
+
+/* Styles for the overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Styles for the image container when hovered */
+.image-container:hover img {
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
+/* Styles for the overlay when hovered */
+.image-container:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.container-fluid {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Table header styles */
+th {
+    background-color: red;
+    text-align: center;
+    height: 30px;
+    color: white;
+}
+
+/* Text container styles */
+.text-container {
+    flex: 1;
+    text-align: center;
+}
+
+/* Horizontal rule styles */
+hr {
+    border: none;
+    height: 5px;
+    background-color: darkgoldenrod;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+/* Custom section styles */
+section.text-container hr {
+    margin: 30px auto;
+    max-width: 50%;
+}
+
+section.footer {
+    color: lightgray;
+    text-align: center;
+    background-color: rgb(28, 23, 23);
+    padding: 30px 0;
+    font-family: 'Titillium Web';
+}
+
+/* Video styles */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border : 0; 
+}
+
+/* Add padding to table rows */
+table tr {
+    padding: 10px 0; /* Adjust the padding as needed */
+}
+
+table td {
+    padding: 10px 0; /* Adjust the padding as needed */
+}
+
+/*tbody tr:nth-child(odd),
+tbody tr:nth-child(even) {
+    text-align: center;
+    color: darkslategray;
+}*/
+
+tbody tr:nth-child(odd) {
+    background: white;
+    color: darkslategray;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background: lightgray;
+    color: darkslategray;
+    text-align: center;
+}
+
+.footer .social a,
+.footer .info a {
+    color: lightgray;
+}
+
+.footer .social img,
+.footer .info img {
+    margin-right: 10px;
+}
+
+/* Box styles */
+.box {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus styles */
+*:focus,
+*:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Wrapper styles */
+.wrapper {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    list-style: none;
+    padding: 0; /* Remove padding from the wrapper */
+    margin: 0; /* Remove margin from the wrapper */
+}
+
+/* Icon styles */
+.wrapper .icon {
+    position: relative;
+    background: transparent;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55), color 0.2s ease;
+    border: 2px solid white;
+}
+
+.wrapper .icon i {
+    color: white;
+}
+
+/* Tooltip styles */
+.wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust to fine-tune the position */
+    font-size: 14px;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.wrapper .icon:hover,
+.wrapper .icon:hover .tooltip {
+    background-color: #1da1f2;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip {
+    background-color: #e4405f;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip {
+    background-color: red;
+}
+
+.wrapper .tiktok:hover,
+.wrapper .tiktok:hover .tooltip {
+    background-color: black;
+}
+
+.wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+#bottom {
+    height: 1px;
+    background-color: lightgray;
+    margin: 20px auto;
+    max-width: 70%;
+}
+
+/* Set maximum width for images */
+.sponsor-logo {
+    width: 100px;
+    height: auto;
+}
+.sponsor {
+    width: 110px;
+    height: aut0;
+}
+
+/* Remove default link styling */
+.main-sponsors a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Style paragraph text */
+#apps p {
+    font: 14px arial;
+}
+
+/* Style links within #apps */
+#apps a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Remove border from images within links */
+#apps a img {
+    border: none;
+}
+
+/* ==================== */
+/* latest.html styles */
+/* ==================== */
+
+.f1-border--three-right {
+    border: 2px solid black; 
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, lightgray 5px, lightgray 10px); 
+    border-radius: 10px; 
+    background-color: #fff;
+    color: black;
+}
+.f1-border--three-right legend { 
+    border: 1px solid black; 
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.f1-border--three-right legend h2 {
+    color: black; 
+    margin: 0;
+}
+
+.video-latest {
+    position: relative;
+    width: 800;
+    height: 450;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+.video-latest iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.f1-border--three-right {
+    width: 100%;
+    height: 100%;
+}
+
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: center;
+    justify-content: center;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.card {
+    position: relative;
+    width: 500px;
+    height: 230px;
+    padding: 15px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border: 6px solid red;
+    transition: border-color 0.3s ease;
+}
+
+.card h2 {
+    position: absolute;
+    bottom: 25px;
+    right: 130px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #131418;
+    pointer-events: none;
+    transition: 0.3s ease;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+}
+
+.card p {
+    z-index: 99;
+    position: absolute;
+    bottom: 30px;
+    right: 130px;
+    width: 150px;
+    opacity: 0;
+    font-size: 12px;
+    color: #131418;
+    text-align: right;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.img-border {
+    width: 200px;
+    height: 200px;
+    border: 6px solid red;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.3s ease;
+    float: left;
+    margin-right: 10px;
+}
+
+.card button {
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    opacity: 1;
+    transition: 0.3s ease;
+    z-index: 1;
+}
+
+/* Hover styles */
+.card:hover button {
+    transform: scale(16);
+}
+.card:hover h2 {
+    bottom: 80px;
+    right: 50px;
+}
+.card:hover p {
+    opacity: 1;
+    right: 60px;
+}
+.card:hover img {
+    filter: grayscale(0);
+}
+
+/* Individual card hover styles */
+.card1:hover,
+.card1:hover img,
+.card1:hover .img-border {
+    border-color: rgb(64, 224, 208);
+}
+.card1:hover button {
+    background-color: rgb(64, 224, 208);
+}
+.card1 h2 {
+    margin-bottom: 40px;
+}
+
+.card2:hover,
+.card2:hover img,
+.card2:hover .img-border {
+    border-color: rgb(51, 51, 255);
+}
+.card2:hover button {
+    background-color: rgb(51, 51, 255);
+}
+.card2 h2 {
+    margin-bottom: 60px;
+}
+
+.card3:hover,
+.card3:hover img,
+.card3:hover .img-border {
+    border-color: rgb(51, 51, 255);
+}
+.card3:hover button { 
+    background-color: rgb(51, 51, 255);
+}
+.card3 h2 {
+    margin-bottom: 60px;
+}
+
+.card4:hover,
+.card4:hover img,
+.card4:hover .img-border {
+    border-color: rgb(0, 104, 102);
+}
+.card4:hover button {
+    background-color: rgb(0, 104, 102);
+}
+.card4 h2 {
+    margin-bottom: 40px;
+}
+
+.card5:hover,
+.card5:hover img,
+.card5:hover .img-border {
+    border-color: rgb(64, 224, 208);
+}
+.card5:hover button {
+    background-color: rgb(64, 224, 208);
+}
+.card5 h2 {
+    margin-bottom: 40px;
+}
+
+.card6:hover,
+.card6:hover img,
+.card6:hover .img-border {
+    border-color: rgb(255, 0, 0);
+}
+.card6:hover button {
+    background-color: rgb(255, 0, 0);
+}
+.card6 h2 {
+    margin-bottom: 60px;
+}
+
+.card7:hover,
+.card7:hover img,
+.card7:hover .img-border {
+    border-color: rgb(51, 51, 255);
+}
+.card7:hover button {
+    background-color: rgb(51, 51, 255);
+}
+.card7 h2 {
+    margin-bottom: 23px;
+}
+
+.card8:hover,
+.card8:hover img,
+.card8:hover .img-border {
+    border-color: rgb(64, 224, 208);
+}
+.card8:hover button {
+    background-color: rgb(64, 224, 208);
+}
+.card8 h2 {
+    margin-bottom: 60px;
+}
+
+
+
+
+
+
