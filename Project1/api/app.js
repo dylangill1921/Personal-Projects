@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
-const driversRoutes = require('./driversRoutes');
+const driversRoutes = require('./routes/driversRoutes');
 app.use('/api', driversRoutes);
 
 // Start server

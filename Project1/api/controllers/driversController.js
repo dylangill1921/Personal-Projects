@@ -1,5 +1,5 @@
 // api/driversController.js
-const poolPromise = require('./db.js'); 
+const poolPromise = require('../config/db.js'); 
 
 // Function to get all drivers
 const getAllDrivers = async (req, res) => {
