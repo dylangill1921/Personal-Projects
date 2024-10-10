@@ -12,6 +12,7 @@ drivers = [
 	(8, 'Lando', 'Norris', 'British', '1999-11-13', 'Bristol, England', 'Green', 4),
 	(9, 'Carlos', 'Sainz', 'Spanish', '1994-09-01', 'Madrid, Spain', 'Red', 55),
 	(10, 'Esteban', 'Ocon', 'French', '1996-09-17', 'Évreux, France', 'Black', 31),
+    (11, 'Oscar', 'Piastri', 'Australian', '2001-04-06', 'Melbourne, Australia', 'Orange', '81'),
 	(12, 'Pierre', 'Gasly', 'French', '1996-02-07', 'Rouen, France', 'Orange', 10),
 	(13, 'Lance', 'Stroll', 'Canadian', '1998-10-29', 'Montreal, Canada', 'Green', 18),
 	(14, 'Yuki', 'Tsunoda', 'Japanese', '2000-05-11', 'Sagamihara, Japan', 'Blue', 22),
