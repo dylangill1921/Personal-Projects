@@ -1,16 +1,21 @@
-// Create drivers controllers
-const promisePool = require('./db.js');
+// api/driversController.js
+const poolPromise = require('./db.js'); 
 
-// Get first 21 drivers
+// Function to get all drivers
 const getAllDrivers = async (req, res) => {
     try {
-        const [rows] = await promisePool.query('SELECT * FROM drivers LIMIT 21');
-        res.status(200).json(rows);
+        // Wait for the connection pool
+        const pool = await poolPromise;
+
+        // Execute the SQL query
+        const result = await pool.request().query('SELECT TOP 21 * FROM drivers;');
+        
+        // Send back the results
+        res.status(200).json(result.recordset);
     } catch (error) {
-        console.error(error);
+        console.error('Error fetching drivers:', error);
         res.status(500).json({ error: 'An error occurred while fetching drivers.' });
     }
 };
 
-// Export the function
 module.exports = { getAllDrivers };

@@ -1,20 +1,32 @@
 // api/config/db.js
-const mysql = require('mysql2');
+const sql = require('mssql');
 const dotenv = require('dotenv');
 
 // Load environment variables
-dotenv.config({path: '../.env'});
+dotenv.config();
 
-// Connection pool
-const pool = mysql.createPool({
-    connectionLimit: 10,
-    host: process.env.DB_HOST,
+// SQL Server configuration
+const config = {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-});
+    server: process.env.DB_HOST, 
+    database: process.env.DB_NAME,
+    options: {
+        encrypt: false,
+        enableArithAbort: true
+    }
+};
 
-const promisePool = pool.promise();
+// Create a connection pool
+let poolPromise = sql.connect(config)
+    .then(pool => {
+        console.log('Connected to SQL Server');
+        return pool;
+    })
+    .catch(err => {
+        console.error('Database connection failed:', err);
+    });
 
-module.exports = promisePool;
+module.exports = poolPromise;
+
 
