@@ -14,9 +14,14 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Routes
-const driversRoutes = require('./routes/driversRoutes');
-app.use('/api', driversRoutes);
+// API Routes
+const driversRoutes = require('./routes/driversRoute'); 
+const constructorsRoutes = require('./routes/constructorsRoute'); 
+const tracksRoutes = require('./routes/tracksRoute');
+
+app.use('/api/drivers', driversRoutes); 
+app.use('/api/constructors', constructorsRoutes);
+app.use('/api/tracks', tracksRoutes);
 
 // Start server
 app.listen(port, () => {
