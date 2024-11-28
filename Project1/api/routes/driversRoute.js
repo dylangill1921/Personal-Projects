@@ -1,9 +1,9 @@
-// API routes
+// Driver routes
 const express = require('express');
 const router = express.Router();
 
-// Import the drivers controller
-const driversController = require('../controllers/driversController');
+// Import drivers controller
+const driversController = require('../controllers/driversController.js');
 
 // Define the GET route for fetching drivers
 router.get('/', driversController.getAllDrivers);

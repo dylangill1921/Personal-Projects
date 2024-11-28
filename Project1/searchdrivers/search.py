@@ -858,7 +858,9 @@ drivers = [
 	(854, 'Ricardo', 'Zonta' , NULL, NULL, NULL, NULL, NULL),
 	(855, 'Renzo', 'Zorzi' , NULL, NULL, NULL, NULL, NULL),
 	(856, 'Ricardo', 'Zunino' , NULL, NULL, NULL, NULL, NULL),
-	(857, 'Philippe', 'Étancelin' , NULL, NULL, NULL, NULL, NULL)
+	(857, 'Philippe', 'Étancelin' , NULL, NULL, NULL, NULL, NULL),
+    (859, 'Franco', 'Colapinto', 'Hispanic', '2003-05-27', 'Buenos Aires, Argentina', 'White', 43),
+	(860, 'Liam', 'Lawson', 'New Zelanders', '2002-02-11', 'Hastings, New Zealand', 'White', 30)
 ]
 
 # Function to search for a driver by name

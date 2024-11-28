@@ -1,46 +1,41 @@
 /* formula 1 tables */
-
-USE formula1_database;
+USE Formula1;
 
 /* tracks table */
-INSERT INTO tracks (TrackID, trackName, country, city, numTurns, laps, fullRaceLength, lapLength)
+SELECT * FROM tracks;
+
+INSERT INTO tracks (TrackID, trackName, city, numTurns, laps, fullRaceLength, lapLength, surfaceType, CountryID)
 VALUES 
-	(1, 'Bahrain International Circuit', 'Bahrain', 'Sakhir', 15, 57, 308.238, 5.412),
-	(2, 'Jeddah Corniche Circuit', 'Saudi Arabia', 'Jeddah', 27, 50, 308.450, 6.174),
-	(3, 'Melbourne Circuit', 'Australia', 'Melbourne', 14, 58, 306.124, 5.278),
-	(4, 'Suzuka Circuit', 'Japan', 'Suzuka', 18, 53, 307.471, 5.807),
-	(5, 'Shanghai International Circuit', 'China', 'Shanghai', 16, 56, 305.066, 5.451), 
-	(6, 'Miami International Autodrome', 'United States of America', 'Miami', 19, 57, 308.33, 5.41), 
-	(7,	'Autodromo Enzo e Dino Ferrari', 'Italy', 'Imola', 19, 63, 309.049, 4.909),
-	(8, 'Circuit de Monaco', 'Monaco', 'Monte Carlo', 18, 78, 260.286, 3.337),
-	(9, 'Circuit Gilles Villeneuve', 'Canada', 'Montreal', 14, 70, 305.270, 4.361),
-	(10, 'Circuit de Barcelona-Catalunya', 'Spain', 'Barcelona', 16, 66, 307.362, 4.657),
-	(11, 'Red Bull Ring', 'Austria', 'Spielberg', 10, 71, 306.452, 4.318),
-	(12, 'Silverstone Circuit',	'United Kingdom', 'Silverstone', 18, 52, 306.198, 5.891),
-	(13, 'Hungaroring', 'Hungary', 'Budapest', 16, 70, 306.630, 4.014),
-	(14, 'Spa-Francorchamps', 'Belgium', 'Spa-Francorchamps', 20, 44, 308.052, 7.004),
-	(15, 'Circuit Zandovoort', 'Netherlands', 'Zandvoort', 14, 72, 306.648, 4.259),
-	(16, 'Autodromo Nazionale Monza', 'Italy', 'Monza', 11, 53, 306.72, 5.793),
-	(17, 'Baku City Circuit', 'Azerbaijan', 'Baku', 20, 51, 306.049, 6.003),
-	(18, 'Marina Bay Street Circuit', 'Singapore', 'Marina Bay', 19, 61, 308.706, 5.063),
-	(19, 'Circuit of the Americas', 'United States of America', 'Austin', 20, 56, 308.405, 5.513),
-	(20, 'Autódromo Hermanos Rodríguez', 'Mexico', 'Mexico City', 17, 71, 305.354, 4.304), 
-	(21, 'Autódromo José Carlos Pace', 'Brazil', 'São Paulo', 15, 71, 305.879, 4.309), 
-	(22, 'Las Vegas Street Circuit', 'United States of America', 'Paradise', 17, 50, 309.958, 6.201),
-	(23, 'Losail Circuit', 'Qatar', 'Doha', 16, 57, 308.611, 5.419),
-	(24, 'Yas Marina Circuit', 'United Arab Emirates', 'Abu Dhabi', 21, 58, 306.183, 5.554);
+	(1, 'Bahrain International Circuit', 'Sakhir', 15, 57, 308.238, 5.412, 'Asphalt Quality Rating: 5/5 - High-Grip Desert Circuit Surface', 13),
+	(2, 'Jeddah Corniche Circuit', 'Jeddah', 27, 50, 308.450, 6.174, 'Asphalt Quality Rating: 4/5 - High-Speed Street Circuit Surface', 151),
+	(3, 'Melbourne Circuit', 'Melbourne', 14, 58, 306.124, 5.278, 'Asphalt Quality Rating: 5/5 - High-Grip Street Circuit with Freshly Resurfaced Track', 9),
+	(4, 'Suzuka Circuit', 'Suzuka', 18, 53, 307.471, 5.807, 'Asphalt Quality Rating: 5/5 - High-Grip Dedicated Racing Circuit Surface', 84),
+	(5, 'Shanghai International Circuit', 'Shanghai', 16, 56, 305.066, 5.451, 'Asphalt Quality Rating: 4/5 - Smooth High-Grip Circuit with Occasional Wear in Heavy Braking Zones', 36), 
+	(6, 'Miami International Autodrome', 'Miami', 19, 57, 308.33, 5.41, 'Asphalt Quality Rating: 3/5 - New Street Circuit Surface with Variable Grip and Limited Rubbering', 185), 
+	(7,	'Autodromo Enzo e Dino Ferrari', 'Imola', 19, 63, 309.049, 4.909, 'Asphalt Quality Rating: 4/5 - Well-Maintained Racing Circuit with High Grip and Mild Wear in Key Corners', 82),
+	(8, 'Circuit de Monaco', 'Monte Carlo', 18, 78, 260.286, 3.337, 'Asphalt Quality Rating: 4/5 - Well-Maintained Racing Circuit with High Grip and Mild Wear in Key Corners', 32),
+	(9, 'Circuit Gilles Villeneuve', 'Montreal', 14, 70, 305.270, 4.361, 'Asphalt Quality Rating: 4/5 - Smooth Street Circuit with Moderate Grip and Occasional Bumps', 114),
+	(10, 'Circuit de Barcelona-Catalunya', 'Barcelona', 16, 66, 307.362, 4.657, 'Asphalt Quality Rating: 4/5 - High-Grip Circuit with Mild Surface Wear in Key Corners', 163),
+	(11, 'Red Bull Ring', 'Spielberg', 10, 71, 306.452, 4.318, 'Asphalt Quality Rating: 5/5 - High-Grip Racing Circuit with Smooth and Consistent Surface', 10),
+	(12, 'Silverstone Circuit', 'Silverstone', 18, 52, 306.198, 5.891, 'Asphalt Quality Rating: 4/5 - High-Grip Circuit with Some Wear in High-Stress Corners', 185),
+	(13, 'Hungaroring', 'Budapest', 16, 70, 306.630, 4.014, 'Asphalt Quality Rating: 4/5 - High-Grip Circuit with Mild Wear in Tight Corners', 74),
+	(14, 'Spa-Francorchamps', 'Spa-Francorchamps', 20, 44, 308.052, 7.004, 'Asphalt Quality Rating: 4/5 - Smooth High-Grip Circuit with Mild Wear in Long Corners', 17),
+	(15, 'Circuit Zandovoort', 'Zandvoort', 14, 72, 306.648, 4.259, 'Asphalt Quality Rating: 4/5 - High-Grip Circuit with Smooth Surface and Some Degradation in High-Load Zones', 123),
+	(16, 'Autodromo Nazionale Monza', 'Monza', 11, 53, 306.72, 5.793, 'Asphalt Quality Rating: 4/5 - Smooth High-Speed Circuit with Mild Wear in Braking Zones', 82),
+	(17, 'Baku City Circuit', 'Baku', 20, 51, 306.049, 6.003, 'Asphalt Quality Rating: 3/5 - Street Circuit with Variable Grip and Frequent Surface Degradation', 11),
+	(18, 'Marina Bay Street Circuit', 'Marina Bay', 19, 61, 308.706, 5.063, 'Asphalt Quality Rating: 3/5 - Street Circuit with Variable Grip and Frequent Surface Degradation', 156),
+	(19, 'Circuit of the Americas', 'Austin', 20, 56, 308.405, 5.513, 'Asphalt Quality Rating: 4/5 - High-Grip Circuit with Some Wear in Heavy Braking Zones', 186),
+	(20, 'Autódromo Hermanos Rodríguez', 'Mexico City', 17, 71, 305.354, 4.304, 'Asphalt Quality Rating: 4/5 - Smooth Circuit with High Grip and Mild Wear in Key Corners', 111), 
+	(21, 'Autódromo José Carlos Pace',  'São Paulo', 15, 71, 305.879, 4.309, 'Asphalt Quality Rating: 4/5 - Well-Maintained Circuit with High Grip and Mild Wear in Heavy Braking Zones', 24), 
+	(22, 'Las Vegas Street Circuit', 'Paradise', 17, 50, 309.958, 6.201, 'Asphalt Quality Rating: 3/5 - New Street Circuit with Variable Grip and Early Surface Degradation', 186),
+	(23, 'Losail Circuit', 'Doha', 16, 57, 308.611, 5.419, 'Asphalt Quality Rating: 4/5 - Smooth, High-Grip Circuit with Mild Wear in High-Speed Sections', 141),
+	(24, 'Yas Marina Circuit', 'Abu Dhabi', 21, 58, 306.183, 5.554, 'Asphalt Quality Rating: 4/5 - Smooth, High-Grip Circuit with Mild Wear in Key Braking Zones', 184);
 
-	SELECT * FROM tracks;
-	/* Update for races table after each weekend! */
-
-
-
-
-
-
+SELECT * FROM tracks;
+ALTER TABLE tracks
+ALTER COLUMN surfaceType VARCHAR(150);
 
 /* races table */
-
 SELECT * FROM races;
 
 INSERT INTO races (RaceID, raceName, startDateTime, endDateTime, weatherConditions, surfaceType, tireBrand, tireCompound, sprintRaceRecord, singleLapRecord, topSpeedRecord, prevDriverWin, prevConstructorWin, DriverID, TeamID, TrackID)

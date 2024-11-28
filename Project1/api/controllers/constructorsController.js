@@ -8,7 +8,7 @@ const getAllConstructors = async (req, res) => {
         const pool = await poolPromise;
 
         // Execute the SQL query
-        const result = await pool.request().query('SELECT TOP 10 * FROM constructors;');
+        const result = await pool.request().query('SELECT TOP 10 * FROM constructors');
         
         // Send back the results
         res.status(200).json(result.recordset);
